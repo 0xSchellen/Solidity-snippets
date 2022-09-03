@@ -2,7 +2,7 @@
 pragma solidity ^0.8.16;
 
 // janbro.eth @unsafe_call
-// original post: https://twitter.com/unsafe_call/status/1565789603046588417/photo/1
+// original post: https://twitter.com/unsafe_call/status/1565789603046588417
 // Can you spot the bug in this code?
 
 
@@ -29,7 +29,7 @@ contract WhiteList {
 
 
 // janbro.eth @unsafe_call
-// original post: https://twitter.com/unsafe_call/status/1565789603046588417/photo/1
+// original post: https://twitter.com/unsafe_call/status/1565789603046588417
 // Can you spot the bug in this code?
 
 // Bug description:
@@ -81,3 +81,19 @@ Alternatively, they could have included the chosenAmount in the data of the leaf
 and only allow proofs which used a specific chosenAmount granted when the MPT was made
 
 */
+
+// Post comments:
+
+// MerkleProof.verify returns boolean for which we should check. 
+// Otherwise we can replay the Merkleproof in similar way how it was done for Nomad bridge
+
+// It looks like people are only allowed to claim one yet there’s a chosenAmount parameter 
+// for some reason. 
+// If different people need different amounts then it should of been added to the merkle 
+// tree database as well.
+
+// chosenAmount :
+// doesn’t have any specific upper limit
+
+// I think bug in merkleProof.verify() no inclusion of already minted token, by changing starting two bytes of merkleproof anybody can repeatedly mint a token.?  
+// Like polygon 2million bug with plasma bridge.
