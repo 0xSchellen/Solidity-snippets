@@ -2,8 +2,8 @@
 
 Some short snippet codes are best tested with Remix
 
-I some cases we wrote tests in foundry
+I some cases tests are made with foundry.
 
-This is a work in progress. Contribuitions are welcome!
+This is a work in progress. Contributions are welcome!
 
 Enjoy !

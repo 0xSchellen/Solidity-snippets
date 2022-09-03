@@ -1,6 +1,8 @@
 / SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.16;
 
+// original post: https://twitter.com/saxenism/status/1565586609625792513
+
 contract ModernSolidityFeatures {
     TestContract tcInstance = new TestContract();
 
@@ -11,6 +13,7 @@ contract ModernSolidityFeatures {
     function modernFunctionSelector() public view returns(bytes4) {
         return tcInstance.square.selector;
     }
+
 
     function conventionalIsContract(address  addr) public view returns(bool) {
         uint256 sizeOfAddressCodeSelection;
