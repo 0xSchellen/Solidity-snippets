@@ -5,11 +5,10 @@ import "forge-std/Test.sol";
 import "../src/CuriousContract.sol";
 
 contract CuriousContractTest is Test {
-
     CuriousContract public curiousContract;
 
     function setUp() public {
-       curiousContract= new CuriousContract();
+        curiousContract = new CuriousContract();
     }
 
     function testDouble() public {

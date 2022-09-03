@@ -13,9 +13,7 @@ function double(uint256 a) pure returns (uint256) {
 
 contract CuriousContract {
     function f(uint256 _a) public pure returns (uint256) {
-        CuriousStruct memory cs = CuriousStruct({
-            curiousFunction: double
-        });
+        CuriousStruct memory cs = CuriousStruct({curiousFunction: double});
 
         return cs.curiousFunction(_a);
     }
